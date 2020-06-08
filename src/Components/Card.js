@@ -31,7 +31,7 @@ function Card({ data : { confirmed, recovered, deaths },country}){
                     <br/>
                     Recovered
                     <br/>
-                    ({((deaths/recovered)*100).toFixed(2)}%)
+                    ({((infected/recovered)*100).toFixed(2)}%)
                 </h2>
                 <h2 className="deaths">
                 <CountUp
