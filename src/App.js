@@ -4,6 +4,7 @@ import CountryPicker from "./Components/CountyPicker";
 import Card from "./Components/Card";
 import Chart from "./Components/Chart";
 import Footer from "./Components/Footer";
+import Header from "./Components/Header";
 import { fetchData } from "./api/index";
 import { fetchCountries, fetchDataByCountry } from "./api";
 
@@ -30,17 +31,28 @@ class App extends React.Component {
   }
 
   handleChange = async (country) => {
-    const data = await fetchDataByCountry(country);
-    this.setState({
-      cardsData: data,
-      country: country,
-    });
+    if (country === "Global") {
+      const data = await fetchData();
+      this.setState({
+        cardsData: data,
+        country: "Global",
+      });
+    }
+
+    if (country !== "Global") {
+      const data = await fetchDataByCountry(country);
+      this.setState({
+        cardsData: data,
+        country: country,
+      });
+    }
   };
 
   render() {
     const { cardsData, countries, country } = this.state;
     return (
       <div>
+        <Header />
         <CountryPicker data={countries} handleChange={this.handleChange} />
         <Card data={cardsData} country={country} />
         <Chart data={cardsData} country={country} />

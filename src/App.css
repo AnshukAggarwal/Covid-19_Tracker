@@ -1,34 +1,42 @@
-body{
+body {
   box-sizing: border-box;
   max-width: 1020px;
   margin: 0 auto;
 }
-#headerimg{
-  width: 1000px;
-  margin-top: 20px;
+
+.header {
+  min-height: 10vh;
 }
 
-.container{
+.hero-image-container {
+  width: 1020px;
+}
+.hero-image-container img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.container {
   display: flex;
   justify-content: space-between;
 }
-.container h2{
+.container h2 {
   padding: 50px;
-  background-color:whitesmoke;
+  background-color: whitesmoke;
 }
-.confirmed{
-  color:red;
+.confirmed {
+  color: red;
 }
-.recovered{
-  color:green;
+.recovered {
+  color: green;
 }
-.deaths{
-  color:grey;
+.deaths {
+  color: grey;
 }
-.selectbox{
-  margin: 10px 0 10px 0;
+.selectbox {
+  margin: 10px 0;
 }
 
-footer{
+footer {
   padding: 30px 0;
 }
