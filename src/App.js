@@ -51,7 +51,7 @@ class App extends React.Component {
   render() {
     const { cardsData, countries, country } = this.state;
     return (
-      <div>
+      <div className="container">
         <Header />
         <CountryPicker data={countries} handleChange={this.handleChange} />
         <Card data={cardsData} country={country} />

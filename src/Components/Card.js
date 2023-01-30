@@ -12,7 +12,7 @@ function Card({ data: { confirmed, recovered, deaths }, country }) {
   return (
     <div>
       <h1>{displayText}</h1>
-      <div className="container">
+      <div className="cards-container">
         <h2 className="confirmed">
           <CountUp start={0} end={confirmed} duration={2} separator="," />
           <br />
